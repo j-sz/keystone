@@ -201,7 +201,7 @@ var validate = password.validate = function (pass, confirm, min, max, complexity
 		}
 	}
 
-	if (rejectCommon && dumbPasswords.check(pass)) {
+	if (typeof pass === 'string' && rejectCommon && dumbPasswords.check(pass)) {
 		messages.push('Password must not be a common, frequently-used password.');
 	}
 
